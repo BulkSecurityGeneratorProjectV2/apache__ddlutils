@@ -22,6 +22,7 @@ package org.apache.ddlutils.task;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
 
 import junit.framework.Test;
@@ -56,7 +57,7 @@ public class TestWriteDataToDatabaseCommand extends TestTaskBase
     private void runTask(DatabaseToDdlTask task, String dataXml, boolean useBatchMode, boolean ensureFkOrder) throws IOException
     {
         WriteDataToDatabaseCommand subTask = new WriteDataToDatabaseCommand();
-        File                       tmpFile = File.createTempFile("schema", ".xml");
+        File                       tmpFile = Files.createTempFile("schema", ".xml").toFile();
         FileWriter                 writer  = null;
 
         try

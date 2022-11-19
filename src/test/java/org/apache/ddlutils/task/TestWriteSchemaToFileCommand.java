@@ -21,6 +21,7 @@ package org.apache.ddlutils.task;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 import junit.framework.Test;
 
@@ -54,7 +55,7 @@ public class TestWriteSchemaToFileCommand extends TestTaskBase
     private void runTask(DatabaseToDdlTask task, Database expectedModel) throws IOException
     {
         WriteSchemaToFileCommand subTask = new WriteSchemaToFileCommand();
-        File                     tmpFile = File.createTempFile("schema", ".xml");
+        File                     tmpFile = Files.createTempFile("schema", ".xml").toFile();
 
         try
         {

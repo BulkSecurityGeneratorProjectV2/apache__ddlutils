@@ -25,6 +25,7 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.math.BigDecimal;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -1141,7 +1142,7 @@ public class TestMisc extends TestAgainstLiveDatabaseBase
         assertEquals(getAdjustedModel(),
                      readModel);
 
-        File tmpFile = File.createTempFile("model", ".xml"); 
+        File tmpFile = Files.createTempFile("model", ".xml").toFile(); 
 
         try
         {

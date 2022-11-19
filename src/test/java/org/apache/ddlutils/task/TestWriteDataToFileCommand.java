@@ -21,6 +21,7 @@ package org.apache.ddlutils.task;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -61,7 +62,7 @@ public class TestWriteDataToFileCommand extends TestTaskBase
     private void runTask(DatabaseToDdlTask task, Map expectedData) throws IOException
     {
         WriteDataToFileCommand subTask = new WriteDataToFileCommand();
-        File                   tmpFile = File.createTempFile("data", ".xml");
+        File                   tmpFile = Files.createTempFile("data", ".xml").toFile();
 
         try
         {

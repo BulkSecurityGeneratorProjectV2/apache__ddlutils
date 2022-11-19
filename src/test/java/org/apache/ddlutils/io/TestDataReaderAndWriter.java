@@ -28,6 +28,7 @@ import java.io.FileWriter;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import junit.framework.TestCase;
@@ -301,7 +302,7 @@ public class TestDataReaderAndWriter extends TestCase
             "  <test id='1' value='foo'/>\n"+
             "</data>";
 
-        File tmpFile = File.createTempFile("data", ".xml");
+        File tmpFile = Files.createTempFile("data", ".xml").toFile();
 
         try
         {
@@ -352,7 +353,7 @@ public class TestDataReaderAndWriter extends TestCase
             "  <test id='1' value='foo'/>\n"+
             "</data>";
 
-        File tmpFile = File.createTempFile("data", ".xml");
+        File tmpFile = Files.createTempFile("data", ".xml").toFile();
 
         try
         {
@@ -403,7 +404,7 @@ public class TestDataReaderAndWriter extends TestCase
             "  <test id='1' value='foo'/>\n"+
             "</data>";
 
-        File tmpFile = File.createTempFile("data", ".xml");
+        File tmpFile = Files.createTempFile("data", ".xml").toFile();
 
         try
         {
